@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CACF7FBC1F238289003A940D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF7FBB1F238289003A940D /* main.m */; };
+		CACF7FBF1F238289003A940D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF7FBE1F238289003A940D /* AppDelegate.m */; };
+		CACF7FC21F238289003A940D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF7FC11F238289003A940D /* ViewController.m */; };
+		CACF7FC51F238289003A940D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACF7FC31F238289003A940D /* Main.storyboard */; };
+		CACF7FC71F238289003A940D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACF7FC61F238289003A940D /* Assets.xcassets */; };
+		CACF7FCA1F238289003A940D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACF7FC81F238289003A940D /* LaunchScreen.storyboard */; };
+		CACF7FD51F238289003A940D /* Agora_Video_SourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF7FD41F238289003A940D /* Agora_Video_SourceTests.m */; };
+		CACF7FE01F238289003A940D /* Agora_Video_SourceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF7FDF1F238289003A940D /* Agora_Video_SourceUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CACF7FD11F238289003A940D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACF7FAF1F238289003A940D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACF7FB61F238289003A940D;
+			remoteInfo = "Agora Video Source";
+		};
+		CACF7FDC1F238289003A940D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACF7FAF1F238289003A940D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACF7FB61F238289003A940D;
+			remoteInfo = "Agora Video Source";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CACF7FB71F238289003A940D /* Agora Video Source.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora Video Source.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACF7FBB1F238289003A940D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CACF7FBD1F238289003A940D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CACF7FBE1F238289003A940D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CACF7FC01F238289003A940D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CACF7FC11F238289003A940D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CACF7FC41F238289003A940D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CACF7FC61F238289003A940D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CACF7FC91F238289003A940D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CACF7FCB1F238289003A940D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACF7FD01F238289003A940D /* Agora Video SourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Agora Video SourceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACF7FD41F238289003A940D /* Agora_Video_SourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Agora_Video_SourceTests.m; sourceTree = "<group>"; };
+		CACF7FD61F238289003A940D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACF7FDB1F238289003A940D /* Agora Video SourceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Agora Video SourceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACF7FDF1F238289003A940D /* Agora_Video_SourceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Agora_Video_SourceUITests.m; sourceTree = "<group>"; };
+		CACF7FE11F238289003A940D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CACF7FB41F238289003A940D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACF7FCD1F238289003A940D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACF7FD81F238289003A940D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CACF7FAE1F238289003A940D = {
+			isa = PBXGroup;
+			children = (
+				CACF7FB91F238289003A940D /* Agora Video Source */,
+				CACF7FD31F238289003A940D /* Agora Video SourceTests */,
+				CACF7FDE1F238289003A940D /* Agora Video SourceUITests */,
+				CACF7FB81F238289003A940D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CACF7FB81F238289003A940D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CACF7FB71F238289003A940D /* Agora Video Source.app */,
+				CACF7FD01F238289003A940D /* Agora Video SourceTests.xctest */,
+				CACF7FDB1F238289003A940D /* Agora Video SourceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CACF7FB91F238289003A940D /* Agora Video Source */ = {
+			isa = PBXGroup;
+			children = (
+				CACF7FBD1F238289003A940D /* AppDelegate.h */,
+				CACF7FBE1F238289003A940D /* AppDelegate.m */,
+				CACF7FC01F238289003A940D /* ViewController.h */,
+				CACF7FC11F238289003A940D /* ViewController.m */,
+				CACF7FC31F238289003A940D /* Main.storyboard */,
+				CACF7FC61F238289003A940D /* Assets.xcassets */,
+				CACF7FC81F238289003A940D /* LaunchScreen.storyboard */,
+				CACF7FCB1F238289003A940D /* Info.plist */,
+				CACF7FBA1F238289003A940D /* Supporting Files */,
+			);
+			path = "Agora Video Source";
+			sourceTree = "<group>";
+		};
+		CACF7FBA1F238289003A940D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CACF7FBB1F238289003A940D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CACF7FD31F238289003A940D /* Agora Video SourceTests */ = {
+			isa = PBXGroup;
+			children = (
+				CACF7FD41F238289003A940D /* Agora_Video_SourceTests.m */,
+				CACF7FD61F238289003A940D /* Info.plist */,
+			);
+			path = "Agora Video SourceTests";
+			sourceTree = "<group>";
+		};
+		CACF7FDE1F238289003A940D /* Agora Video SourceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CACF7FDF1F238289003A940D /* Agora_Video_SourceUITests.m */,
+				CACF7FE11F238289003A940D /* Info.plist */,
+			);
+			path = "Agora Video SourceUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CACF7FB61F238289003A940D /* Agora Video Source */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACF7FE41F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video Source" */;
+			buildPhases = (
+				CACF7FB31F238289003A940D /* Sources */,
+				CACF7FB41F238289003A940D /* Frameworks */,
+				CACF7FB51F238289003A940D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Agora Video Source";
+			productName = "Agora Video Source";
+			productReference = CACF7FB71F238289003A940D /* Agora Video Source.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CACF7FCF1F238289003A940D /* Agora Video SourceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACF7FE71F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video SourceTests" */;
+			buildPhases = (
+				CACF7FCC1F238289003A940D /* Sources */,
+				CACF7FCD1F238289003A940D /* Frameworks */,
+				CACF7FCE1F238289003A940D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CACF7FD21F238289003A940D /* PBXTargetDependency */,
+			);
+			name = "Agora Video SourceTests";
+			productName = "Agora Video SourceTests";
+			productReference = CACF7FD01F238289003A940D /* Agora Video SourceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CACF7FDA1F238289003A940D /* Agora Video SourceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACF7FEA1F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video SourceUITests" */;
+			buildPhases = (
+				CACF7FD71F238289003A940D /* Sources */,
+				CACF7FD81F238289003A940D /* Frameworks */,
+				CACF7FD91F238289003A940D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CACF7FDD1F238289003A940D /* PBXTargetDependency */,
+			);
+			name = "Agora Video SourceUITests";
+			productName = "Agora Video SourceUITests";
+			productReference = CACF7FDB1F238289003A940D /* Agora Video SourceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CACF7FAF1F238289003A940D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = xtcel.com;
+				TargetAttributes = {
+					CACF7FB61F238289003A940D = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					CACF7FCF1F238289003A940D = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CACF7FB61F238289003A940D;
+					};
+					CACF7FDA1F238289003A940D = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CACF7FB61F238289003A940D;
+					};
+				};
+			};
+			buildConfigurationList = CACF7FB21F238289003A940D /* Build configuration list for PBXProject "Agora Video Source" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CACF7FAE1F238289003A940D;
+			productRefGroup = CACF7FB81F238289003A940D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CACF7FB61F238289003A940D /* Agora Video Source */,
+				CACF7FCF1F238289003A940D /* Agora Video SourceTests */,
+				CACF7FDA1F238289003A940D /* Agora Video SourceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CACF7FB51F238289003A940D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACF7FCA1F238289003A940D /* LaunchScreen.storyboard in Resources */,
+				CACF7FC71F238289003A940D /* Assets.xcassets in Resources */,
+				CACF7FC51F238289003A940D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACF7FCE1F238289003A940D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACF7FD91F238289003A940D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CACF7FB31F238289003A940D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACF7FC21F238289003A940D /* ViewController.m in Sources */,
+				CACF7FBF1F238289003A940D /* AppDelegate.m in Sources */,
+				CACF7FBC1F238289003A940D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACF7FCC1F238289003A940D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACF7FD51F238289003A940D /* Agora_Video_SourceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACF7FD71F238289003A940D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACF7FE01F238289003A940D /* Agora_Video_SourceUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CACF7FD21F238289003A940D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACF7FB61F238289003A940D /* Agora Video Source */;
+			targetProxy = CACF7FD11F238289003A940D /* PBXContainerItemProxy */;
+		};
+		CACF7FDD1F238289003A940D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACF7FB61F238289003A940D /* Agora Video Source */;
+			targetProxy = CACF7FDC1F238289003A940D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CACF7FC31F238289003A940D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CACF7FC41F238289003A940D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CACF7FC81F238289003A940D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CACF7FC91F238289003A940D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CACF7FE21F238289003A940D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CACF7FE31F238289003A940D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CACF7FE51F238289003A940D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Agora Video Source/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-Source";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CACF7FE61F238289003A940D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Agora Video Source/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-Source";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CACF7FE81F238289003A940D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Agora Video SourceTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-SourceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Agora Video Source.app/Agora Video Source";
+			};
+			name = Debug;
+		};
+		CACF7FE91F238289003A940D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Agora Video SourceTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-SourceTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Agora Video Source.app/Agora Video Source";
+			};
+			name = Release;
+		};
+		CACF7FEB1F238289003A940D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Agora Video SourceUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-SourceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Agora Video Source";
+			};
+			name = Debug;
+		};
+		CACF7FEC1F238289003A940D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Agora Video SourceUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-SourceUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Agora Video Source";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CACF7FB21F238289003A940D /* Build configuration list for PBXProject "Agora Video Source" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACF7FE21F238289003A940D /* Debug */,
+				CACF7FE31F238289003A940D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CACF7FE41F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video Source" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACF7FE51F238289003A940D /* Debug */,
+				CACF7FE61F238289003A940D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CACF7FE71F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video SourceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACF7FE81F238289003A940D /* Debug */,
+				CACF7FE91F238289003A940D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CACF7FEA1F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video SourceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACF7FEB1F238289003A940D /* Debug */,
+				CACF7FEC1F238289003A940D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CACF7FAF1F238289003A940D /* Project object */;
+}
