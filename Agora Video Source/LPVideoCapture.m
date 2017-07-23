@@ -51,17 +51,17 @@
 //        AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
 //        [videoView insertCaptureVideoPreviewLayer:previewLayer];
 
+        //GPUImage
         [self.leveBeautyFilter removeAllTargets];
         [self.videoCamera removeAllTargets];
         [self.filterOutput removeAllTargets];
         
-        //GPUImage
         GPUImageView *g = [[GPUImageView alloc] init];
         [g setFillMode:kGPUImageFillModePreserveAspectRatioAndFill];
         g.frame = videoView.bounds;
         [videoView addSubview:g];
         
-        CGSize outputSize = {720, 1280};
+        CGSize outputSize = {1280, 720};
         GPUImageCustomRawDataOutput *rawDataOutput = [[GPUImageCustomRawDataOutput alloc] initWithImageSize:outputSize resultsInBGRAFormat:NO];
         
         [self.videoCamera addTarget:self.leveBeautyFilter];
@@ -70,33 +70,37 @@
         
         [self.leveBeautyFilter addTarget:rawDataOutput];
 
+
+//
+//        
+//        __weak GPUImageCustomRawDataOutput *weakOutput = rawDataOutput;
+//        __weak typeof(self) weakSelf = self;
+//
+//        [rawDataOutput setNewFrameAvailableBlockWithTime:^(CMTime frametime) {
+//            __strong GPUImageCustomRawDataOutput *strongOutput = weakOutput;
+//
+//            [VideoGenerator sampleBufferFromRawData:strongOutput frametime:frametime block:^(CMSampleBufferRef sampleBuffer) {
+//                CVPixelBufferRef aSampleBufferRef = CMSampleBufferGetImageBuffer(sampleBuffer);
+//                if (!aSampleBufferRef) {
+//                    return;
+//                }
+//                
+//                __weak typeof(self) ws = self;
+//                //    dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.delegate videoCapture:self didOutputSampleBuffer:aSampleBufferRef rotation:90  timeStamp:(int64_t)((CACurrentMediaTime()*1000))];
+//                //    });
+//            }];
+//        }];
+        
+        
+        
 //        [self.leveBeautyFilter forceProcessingAtSize:outputSize];
 //        [rawDataOutput forceProcessingAtSize:videoView.bounds.size];
-        
-        // 输出数据
-//        __weak typeof(self) _self = self;
-//        [self.filterOutput setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
-//            [_self processVideo:output];
-//        }];
 
-        
-        __weak GPUImageCustomRawDataOutput *weakOutput = rawDataOutput;
-        __weak typeof(self) weakSelf = self;
-
-        [rawDataOutput setNewFrameAvailableBlockWithTime:^(CMTime frametime) {
-            __strong GPUImageCustomRawDataOutput *strongOutput = weakOutput;
-
-            [VideoGenerator sampleBufferFromRawData:strongOutput frametime:frametime block:^(CMSampleBufferRef sampleBuffer) {
-                CVPixelBufferRef aSampleBufferRef = CMSampleBufferGetImageBuffer(sampleBuffer);
-                if (!aSampleBufferRef) {
-                    return;
-                }
-                
-                __weak typeof(self) ws = self;
-                //    dispatch_async(dispatch_get_main_queue(), ^{
-                [self.delegate videoCapture:self didOutputSampleBuffer:aSampleBufferRef rotation:0  timeStamp:(int64_t)((CACurrentMediaTime()*1000))];
-                //    });
-            }];
+        //输出数据
+        __weak typeof(self) _self = self;
+        [self.filterOutput setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
+            [_self processVideo:output];
         }];
         
         self.delegate = delegate;
@@ -151,14 +155,14 @@
 
 - (void)stopCapture {
     // GUPIMAGE videoCamera
-    [self.videoCamera stopCameraCapture];
-    self.videoCamera.delegate = nil;
+//    [self.videoCamera stopCameraCapture];
+//    self.videoCamera.delegate = nil;
     
-//    [self.currentOutput setSampleBufferDelegate:nil queue:nil];
-//    __weak typeof(self) ws = self;
-//    dispatch_async(self.captureQueue, ^{
-//        [ws.captureSession stopRunning];
-//    });
+    [self.currentOutput setSampleBufferDelegate:nil queue:nil];
+    __weak typeof(self) ws = self;
+    dispatch_async(self.captureQueue, ^{
+        [ws.captureSession stopRunning];
+    });
 }
 
 - (void)switchCamera {
@@ -237,7 +241,7 @@
     }
     
     __weak typeof(self) ws = self;
-        [ws.delegate videoCapture:ws didOutputSampleBuffer:aSampleBufferRef rotation:90 timeStamp:(CACurrentMediaTime()*1000)];
+    [ws.delegate videoCapture:ws didOutputSampleBuffer:aSampleBufferRef rotation:90 timeStamp:(CACurrentMediaTime()*1000)];
 }
 
 #pragma mark - GPUImageVideoCameraDelegate
@@ -266,11 +270,6 @@
         _videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionFront];
         _videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
         _videoCamera.horizontallyMirrorFrontFacingCamera = YES;
-        
-//        _videoCamera.outputImageOrientation = _configuration.outputImageOrientation;
-//        _videoCamera.horizontallyMirrorFrontFacingCamera = NO;
-//        _videoCamera.horizontallyMirrorRearFacingCamera = NO;
-//        _videoCamera.frameRate = (int32_t)_configuration.videoFrameRate;
     }
     return _videoCamera;
 }

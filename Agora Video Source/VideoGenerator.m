@@ -33,11 +33,11 @@
     [output lockFramebufferForReading];
     
     // TODO: Wire this up to the initializer (or output object) so different sizes can work
-    CGSize imageSize = {720, 1280};
+    CGSize imageSize = {1280, 720};
     
     GLubyte *sourceBytes = [output rawBytesForImage];
     NSInteger bytesPerRow = [output bytesPerRowInOutput];
-    NSLog(@"bytesPerRow = %ld", (long)bytesPerRow);
+//    NSLog(@"bytesPerRow = %ld", (long)bytesPerRow);
     
     int dst_width = imageSize.width;
     int dst_height = imageSize.height;
@@ -82,7 +82,7 @@
     (kCFAllocatorDefault,
      imageSize.width,
      imageSize.height,
-     kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange,
+     kCVPixelFormatType_420YpCbCr8BiPlanarFullRange,
      NULL,
      NULL,
      2,
