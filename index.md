@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+# Agora Video Source iOS(Object-C)
 
-You can use the [editor on GitHub](https://github.com/xtcel/Agora-Video-Source/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+这个开源示例项目演示了如何使用自采集的摄像头数据，并通过Agora视频SDK实现视频通话。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+在这个示例项目中包含了以下功能：
 
-### Markdown
+- 加入通话和离开通话；
+- 静音和解除静音；
+- 自己采集摄像头数据，并使用Agora视频SDK传输；
+- 切换前置摄像头和后置摄像头；
+- 关闭摄像头和打开摄像头；
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 运行示例程序
+首先在 [Agora.io 注册](https://dashboard.agora.io/cn/signup/) 注册账号，并创建自己的测试项目，获取到 AppID。
 
-```markdown
-Syntax highlighted code block
+## 运行环境
+* XCode 8.0 +
+* iOS 真机设备
+* 不支持模拟器
 
-# Header 1
-## Header 2
-### Header 3
+## 代码许可
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/xtcel/Agora-Video-Source/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The MIT License (MIT).
