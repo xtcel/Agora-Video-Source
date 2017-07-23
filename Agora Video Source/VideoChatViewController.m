@@ -9,13 +9,13 @@
 #import "VideoChatViewController.h"
 #import "LPVideoView.h"
 #import "LPVideoCapture.h"
+#import "AppId.h"
 
 //获取当前屏幕高
 #define  SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 //获取当前屏幕宽
 #define  SCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 
-static NSString *appID = @"421e6f7210e84f0eb2a690c6d630b84f";
 
 @interface VideoChatViewController ()<AgoraRtcEngineDelegate, LPVideoCaptureDelegate>
 

@@ -613,6 +613,7 @@
 		CACF845C1F24E594003A940D /* video_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_common.h; sourceTree = "<group>"; };
 		CACF845D1F24E594003A940D /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libyuv.a; sourceTree = "<group>"; };
 		CACF845E1F24E594003A940D /* libyuv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libyuv.h; sourceTree = "<group>"; };
+		EE16CD621F25171A005A6D57 /* AppId.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppId.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -673,6 +674,7 @@
 		CACF7FB91F238289003A940D /* Agora Video Source */ = {
 			isa = PBXGroup;
 			children = (
+				EE16CD621F25171A005A6D57 /* AppId.h */,
 				CACF7FBD1F238289003A940D /* AppDelegate.h */,
 				CACF7FBE1F238289003A940D /* AppDelegate.m */,
 				CACF7FC01F238289003A940D /* VideoChatViewController.h */,
