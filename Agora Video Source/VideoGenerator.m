@@ -50,12 +50,20 @@
     uint8_t* outputBytes = malloc(total_size);
     
     uint8_t* interMiediateBytes = malloc(total_size);
-    ABGRToI420(sourceBytes, bytesPerRow,
-                       interMiediateBytes, dst_width,
-                       interMiediateBytes + dst_width * dst_height, half_width,
-                       interMiediateBytes + dst_width * dst_height + half_width * half_height,  half_width,
-                       dst_width, dst_height);
-//
+    
+    ARGBToI420(sourceBytes, bytesPerRow,
+               interMiediateBytes, dst_width,
+               interMiediateBytes + dst_width * dst_height, half_width,
+               interMiediateBytes + dst_width * dst_height + half_width * half_height,  half_width,
+               dst_width, dst_height);
+    
+//    BGRAToI420(sourceBytes, bytesPerRow,
+//                       interMiediateBytes, dst_width,
+//                       interMiediateBytes + dst_width * dst_height, half_width,
+//                       interMiediateBytes + dst_width * dst_height + half_width * half_height,  half_width,
+//                       dst_width, dst_height);
+////
+    
     I420ToNV12(interMiediateBytes, dst_width,
                interMiediateBytes + dst_width * dst_height, half_width,
                interMiediateBytes + dst_width * dst_height + half_width * half_height, half_width,
@@ -67,11 +75,15 @@
     CVPixelBufferRef pixel_buffer = NULL;
     size_t planeWidths[2];
     planeWidths[0] = imageSize.width;
-    planeWidths[1] = imageSize.width;
+    planeWidths[1] = imageSize.width/2;
     
     size_t planeHeights[2];
     planeHeights[0] = imageSize.height;
     planeHeights[1] = imageSize.height / 2;
+    
+    size_t planeBytesPerRow[2];
+    planeBytesPerRow[0] = imageSize.width;
+    planeBytesPerRow[1] = imageSize.width;
     
     uint8_t* baseAddresses[2];
     baseAddresses[0] = outputBytes;
@@ -82,14 +94,14 @@
     (kCFAllocatorDefault,
      imageSize.width,
      imageSize.height,
-     kCVPixelFormatType_420YpCbCr8BiPlanarFullRange,
+     kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange,
      NULL,
      NULL,
      2,
      baseAddresses,
      &planeWidths,
      &planeHeights,
-     &planeWidths,
+     &planeBytesPerRow,
      NULL,
      NULL,
      NULL,

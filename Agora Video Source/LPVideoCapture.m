@@ -62,49 +62,32 @@
         [videoView addSubview:g];
         
         CGSize outputSize = {1280, 720};
-        GPUImageCustomRawDataOutput *rawDataOutput = [[GPUImageCustomRawDataOutput alloc] initWithImageSize:outputSize resultsInBGRAFormat:NO];
-        
+        GPUImageCustomRawDataOutput *rawDataOutput = [[GPUImageCustomRawDataOutput alloc] initWithImageSize:outputSize resultsInBGRAFormat:YES];
+
         [self.videoCamera addTarget:self.leveBeautyFilter];
+        [self.leveBeautyFilter addTarget:g];
+        
         [self.leveBeautyFilter addTarget:self.filterOutput];
-        [self.filterOutput addTarget:g];
-        
-        [self.leveBeautyFilter addTarget:rawDataOutput];
+        [self.filterOutput setInputRotation:kGPUImageRotateLeft atIndex:0];
+        [self.filterOutput addTarget:rawDataOutput];
+   
+        __weak GPUImageCustomRawDataOutput *weakOutput = rawDataOutput;
+        __weak typeof(self) weakSelf = self;
 
+        [rawDataOutput setNewFrameAvailableBlockWithTime:^(CMTime frametime) {
+            __strong GPUImageCustomRawDataOutput *strongOutput = weakOutput;
 
-//
-//        
-//        __weak GPUImageCustomRawDataOutput *weakOutput = rawDataOutput;
-//        __weak typeof(self) weakSelf = self;
-//
-//        [rawDataOutput setNewFrameAvailableBlockWithTime:^(CMTime frametime) {
-//            __strong GPUImageCustomRawDataOutput *strongOutput = weakOutput;
-//
-//            [VideoGenerator sampleBufferFromRawData:strongOutput frametime:frametime block:^(CMSampleBufferRef sampleBuffer) {
-//                CVPixelBufferRef aSampleBufferRef = CMSampleBufferGetImageBuffer(sampleBuffer);
-//                if (!aSampleBufferRef) {
-//                    return;
-//                }
-//                
-//                __weak typeof(self) ws = self;
-//                //    dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.delegate videoCapture:self didOutputSampleBuffer:aSampleBufferRef rotation:90  timeStamp:(int64_t)((CACurrentMediaTime()*1000))];
-//                //    });
-//            }];
-//        }];
-        
-        
-        
-//        [self.leveBeautyFilter forceProcessingAtSize:outputSize];
-//        [rawDataOutput forceProcessingAtSize:videoView.bounds.size];
-
-        //输出数据
-        __weak typeof(self) _self = self;
-        [self.filterOutput setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
-            [_self processVideo:output];
+            [VideoGenerator sampleBufferFromRawData:strongOutput frametime:frametime block:^(CMSampleBufferRef sampleBuffer) {
+                CVPixelBufferRef aSampleBufferRef = CMSampleBufferGetImageBuffer(sampleBuffer);
+                if (!aSampleBufferRef) {
+                    return;
+                }
+                
+                [weakSelf.delegate videoCapture:weakSelf didOutputSampleBuffer:aSampleBufferRef rotation:90  timeStamp:(int64_t)((CACurrentMediaTime()*1000))];
+            }];
         }];
         
         self.delegate = delegate;
-        //        self.videoCamera.delegate = self;
     }
     
     return self;
@@ -155,14 +138,14 @@
 
 - (void)stopCapture {
     // GUPIMAGE videoCamera
-//    [self.videoCamera stopCameraCapture];
-//    self.videoCamera.delegate = nil;
+    [self.videoCamera stopCameraCapture];
+    self.videoCamera.delegate = nil;
     
-    [self.currentOutput setSampleBufferDelegate:nil queue:nil];
-    __weak typeof(self) ws = self;
-    dispatch_async(self.captureQueue, ^{
-        [ws.captureSession stopRunning];
-    });
+//    [self.currentOutput setSampleBufferDelegate:nil queue:nil];
+//    __weak typeof(self) ws = self;
+//    dispatch_async(self.captureQueue, ^{
+//        [ws.captureSession stopRunning];
+//    });
 }
 
 - (void)switchCamera {
@@ -270,6 +253,7 @@
         _videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionFront];
         _videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
         _videoCamera.horizontallyMirrorFrontFacingCamera = YES;
+        _videoCamera.horizontallyMirrorRearFacingCamera = YES;
     }
     return _videoCamera;
 }
