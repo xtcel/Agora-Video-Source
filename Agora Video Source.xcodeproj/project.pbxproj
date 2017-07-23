@@ -197,6 +197,10 @@
 		CACF84131F23989E003A940D /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CACF83681F23989D003A940D /* License.txt */; };
 		CACF84141F23989E003A940D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CACF83691F23989D003A940D /* README.md */; };
 		CACF84171F2398CD003A940D /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CACF84161F2398CD003A940D /* AgoraRtcEngineKit.framework */; };
+		CACF84291F24A512003A940D /* LFGPUImageEmptyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF84281F24A512003A940D /* LFGPUImageEmptyFilter.m */; };
+		CACF84461F24DD67003A940D /* VideoGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF84451F24DD67003A940D /* VideoGenerator.m */; };
+		CACF84491F24E41E003A940D /* GPUImageCustomRawDataOutput.m in Sources */ = {isa = PBXBuildFile; fileRef = CACF84481F24E41E003A940D /* GPUImageCustomRawDataOutput.m */; };
+		CACF845F1F24E594003A940D /* libyuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CACF845D1F24E594003A940D /* libyuv.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -584,6 +588,31 @@
 		CACF83681F23989D003A940D /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		CACF83691F23989D003A940D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CACF84161F2398CD003A940D /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
+		CACF84271F24A512003A940D /* LFGPUImageEmptyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFGPUImageEmptyFilter.h; sourceTree = "<group>"; };
+		CACF84281F24A512003A940D /* LFGPUImageEmptyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFGPUImageEmptyFilter.m; sourceTree = "<group>"; };
+		CACF84441F24DD67003A940D /* VideoGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoGenerator.h; sourceTree = "<group>"; };
+		CACF84451F24DD67003A940D /* VideoGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoGenerator.m; sourceTree = "<group>"; };
+		CACF84471F24E41E003A940D /* GPUImageCustomRawDataOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageCustomRawDataOutput.h; sourceTree = "<group>"; };
+		CACF84481F24E41E003A940D /* GPUImageCustomRawDataOutput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageCustomRawDataOutput.m; sourceTree = "<group>"; };
+		CACF844C1F24E594003A940D /* basic_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = basic_types.h; sourceTree = "<group>"; };
+		CACF844D1F24E594003A940D /* compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = compare.h; sourceTree = "<group>"; };
+		CACF844E1F24E594003A940D /* convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert.h; sourceTree = "<group>"; };
+		CACF844F1F24E594003A940D /* convert_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_argb.h; sourceTree = "<group>"; };
+		CACF84501F24E594003A940D /* convert_from.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from.h; sourceTree = "<group>"; };
+		CACF84511F24E594003A940D /* convert_from_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = convert_from_argb.h; sourceTree = "<group>"; };
+		CACF84521F24E594003A940D /* cpu_id.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu_id.h; sourceTree = "<group>"; };
+		CACF84531F24E594003A940D /* mjpeg_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mjpeg_decoder.h; sourceTree = "<group>"; };
+		CACF84541F24E594003A940D /* planar_functions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = planar_functions.h; sourceTree = "<group>"; };
+		CACF84551F24E594003A940D /* rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate.h; sourceTree = "<group>"; };
+		CACF84561F24E594003A940D /* rotate_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rotate_argb.h; sourceTree = "<group>"; };
+		CACF84571F24E594003A940D /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = row.h; sourceTree = "<group>"; };
+		CACF84581F24E594003A940D /* scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale.h; sourceTree = "<group>"; };
+		CACF84591F24E594003A940D /* scale_argb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_argb.h; sourceTree = "<group>"; };
+		CACF845A1F24E594003A940D /* scale_row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scale_row.h; sourceTree = "<group>"; };
+		CACF845B1F24E594003A940D /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		CACF845C1F24E594003A940D /* video_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_common.h; sourceTree = "<group>"; };
+		CACF845D1F24E594003A940D /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libyuv.a; sourceTree = "<group>"; };
+		CACF845E1F24E594003A940D /* libyuv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libyuv.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -591,6 +620,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CACF845F1F24E594003A940D /* libyuv.a in Frameworks */,
 				CACF84171F2398CD003A940D /* AgoraRtcEngineKit.framework in Frameworks */,
 				CACF820E1F239645003A940D /* AudioToolbox.framework in Frameworks */,
 				CACF820C1F239639003A940D /* CoreTelephony.framework in Frameworks */,
@@ -651,10 +681,15 @@
 				CACF81F81F2382BA003A940D /* LPVideoView.m */,
 				CACF81F91F2382BA003A940D /* LPVideoCapture.h */,
 				CACF81FA1F2382BA003A940D /* LPVideoCapture.m */,
+				CACF84471F24E41E003A940D /* GPUImageCustomRawDataOutput.h */,
+				CACF84481F24E41E003A940D /* GPUImageCustomRawDataOutput.m */,
+				CACF84441F24DD67003A940D /* VideoGenerator.h */,
+				CACF84451F24DD67003A940D /* VideoGenerator.m */,
 				CACF81441F2382B0003A940D /* GPUImageBeautyFilter */,
 				CACF7FC31F238289003A940D /* Main.storyboard */,
 				CACF7FC61F238289003A940D /* Assets.xcassets */,
 				CACF7FC81F238289003A940D /* LaunchScreen.storyboard */,
+				CACF842E1F24DD4A003A940D /* NV12YUV */,
 				CACF82131F23989D003A940D /* GPUImage */,
 				CACF7FCB1F238289003A940D /* Info.plist */,
 				CACF84151F2398CD003A940D /* libs */,
@@ -694,6 +729,8 @@
 			children = (
 				CACF81451F2382B0003A940D /* LFGPUImageBeautyFilter.h */,
 				CACF81461F2382B0003A940D /* LFGPUImageBeautyFilter.m */,
+				CACF84271F24A512003A940D /* LFGPUImageEmptyFilter.h */,
+				CACF84281F24A512003A940D /* LFGPUImageEmptyFilter.m */,
 			);
 			path = GPUImageBeautyFilter;
 			sourceTree = "<group>";
@@ -1104,6 +1141,40 @@
 			path = libs;
 			sourceTree = "<group>";
 		};
+		CACF842E1F24DD4A003A940D /* NV12YUV */ = {
+			isa = PBXGroup;
+			children = (
+				CACF844B1F24E594003A940D /* libyuv */,
+				CACF845D1F24E594003A940D /* libyuv.a */,
+				CACF845E1F24E594003A940D /* libyuv.h */,
+			);
+			path = NV12YUV;
+			sourceTree = "<group>";
+		};
+		CACF844B1F24E594003A940D /* libyuv */ = {
+			isa = PBXGroup;
+			children = (
+				CACF844C1F24E594003A940D /* basic_types.h */,
+				CACF844D1F24E594003A940D /* compare.h */,
+				CACF844E1F24E594003A940D /* convert.h */,
+				CACF844F1F24E594003A940D /* convert_argb.h */,
+				CACF84501F24E594003A940D /* convert_from.h */,
+				CACF84511F24E594003A940D /* convert_from_argb.h */,
+				CACF84521F24E594003A940D /* cpu_id.h */,
+				CACF84531F24E594003A940D /* mjpeg_decoder.h */,
+				CACF84541F24E594003A940D /* planar_functions.h */,
+				CACF84551F24E594003A940D /* rotate.h */,
+				CACF84561F24E594003A940D /* rotate_argb.h */,
+				CACF84571F24E594003A940D /* row.h */,
+				CACF84581F24E594003A940D /* scale.h */,
+				CACF84591F24E594003A940D /* scale_argb.h */,
+				CACF845A1F24E594003A940D /* scale_row.h */,
+				CACF845B1F24E594003A940D /* version.h */,
+				CACF845C1F24E594003A940D /* video_common.h */,
+			);
+			path = libyuv;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1259,6 +1330,7 @@
 				CACF83B31F23989D003A940D /* GPUImageKuwaharaFilter.m in Sources */,
 				CACF83D01F23989E003A940D /* GPUImageOpeningFilter.m in Sources */,
 				CACF83951F23989D003A940D /* GPUImageExclusionBlendFilter.m in Sources */,
+				CACF84461F24DD67003A940D /* VideoGenerator.m in Sources */,
 				CACF83FD1F23989E003A940D /* GPUImageTiltShiftFilter.m in Sources */,
 				CACF83AB1F23989D003A940D /* GPUImageHistogramFilter.m in Sources */,
 				CACF83A71F23989D003A940D /* GPUImageHazeFilter.m in Sources */,
@@ -1327,6 +1399,7 @@
 				CACF83E71F23989E003A940D /* GPUImageSepiaFilter.m in Sources */,
 				CACF83E01F23989E003A940D /* GPUImageRGBDilationFilter.m in Sources */,
 				CACF837A1F23989D003A940D /* GPUImageBrightnessFilter.m in Sources */,
+				CACF84491F24E41E003A940D /* GPUImageCustomRawDataOutput.m in Sources */,
 				CACF83E81F23989E003A940D /* GPUImageSharpenFilter.m in Sources */,
 				CACF83961F23989D003A940D /* GPUImageExposureFilter.m in Sources */,
 				CACF83F11F23989E003A940D /* GPUImageSourceOverBlendFilter.m in Sources */,
@@ -1337,6 +1410,7 @@
 				CACF83BE1F23989E003A940D /* GPUImageLuminanceRangeFilter.m in Sources */,
 				CACF83781F23989D003A940D /* GPUImageBilateralFilter.m in Sources */,
 				CACF83A51F23989D003A940D /* GPUImageHardLightBlendFilter.m in Sources */,
+				CACF84291F24A512003A940D /* LFGPUImageEmptyFilter.m in Sources */,
 				CACF83B21F23989D003A940D /* GPUImageJFAVoronoiFilter.m in Sources */,
 				CACF83EE1F23989E003A940D /* GPUImageSoftEleganceFilter.m in Sources */,
 				CACF83A21F23989D003A940D /* GPUImageGlassSphereFilter.m in Sources */,
@@ -1582,6 +1656,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Agora\\ Video\\ Source/libs",
+					"$(PROJECT_DIR)/Agora\\ Video\\ Source/NV12YUV",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-Source";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1604,6 +1679,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Agora\\ Video\\ Source/libs",
+					"$(PROJECT_DIR)/Agora\\ Video\\ Source/NV12YUV",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.xtcel.Agora-Video-Source";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1675,6 +1751,7 @@
 				CACF7FE61F238289003A940D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CACF7FE71F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video SourceTests" */ = {
 			isa = XCConfigurationList;
@@ -1683,6 +1760,7 @@
 				CACF7FE91F238289003A940D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CACF7FEA1F238289003A940D /* Build configuration list for PBXNativeTarget "Agora Video SourceUITests" */ = {
 			isa = XCConfigurationList;
@@ -1691,6 +1769,7 @@
 				CACF7FEC1F238289003A940D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

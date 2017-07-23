@@ -217,8 +217,7 @@ NSString *const kLFGPUImageBeautyFragmentShaderString = SHADER_STRING
     gl_FragColor.rgb = mix(gl_FragColor.rgb, satcolor, params.a);
     gl_FragColor.rgb = vec3(gl_FragColor.rgb + vec3(brightness));
 }
-
-                                                        );
+);
 #endif
 
 @implementation LFGPUImageBeautyFilter

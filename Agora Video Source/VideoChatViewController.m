@@ -50,7 +50,7 @@ static NSString *appID = @"421e6f7210e84f0eb2a690c6d630b84f";
 - (void)setupVideo {
     [self.agoraKit setExternalVideoSource:YES useTexture:YES pushMode:YES];
     [self.agoraKit enableVideo];
-    [self.agoraKit setVideoProfile:AgoraRtc_VideoProfile_360P swapWidthAndHeight: false];
+    [self.agoraKit setVideoProfile:AgoraRtc_VideoProfile_720P swapWidthAndHeight: false];
 }
 
 - (void)startVideoCapture {

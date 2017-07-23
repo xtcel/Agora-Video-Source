@@ -8,6 +8,9 @@
 
 #import "LPVideoCapture.h"
 #import "LFGPUImageBeautyFilter.h"
+#import "LFGPUImageEmptyFilter.h"
+#import "VideoGenerator.h"
+#import "GPUImageCustomRawDataOutput.h"
 
 @interface LPVideoCapture ()<AVCaptureVideoDataOutputSampleBufferDelegate, GPUImageVideoCameraDelegate>
 
@@ -19,6 +22,7 @@
 
 @property (nonatomic, strong) GPUImageStillCamera *videoCamera;
 @property (nonatomic, strong) LFGPUImageBeautyFilter *leveBeautyFilter;
+@property (nonatomic, strong) GPUImageOutput<GPUImageInput> *filterOutput;
 
 @end
 
@@ -47,51 +51,72 @@
 //        AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.captureSession];
 //        [videoView insertCaptureVideoPreviewLayer:previewLayer];
 
+        [self.leveBeautyFilter removeAllTargets];
+        [self.videoCamera removeAllTargets];
+        [self.filterOutput removeAllTargets];
+        
         //GPUImage
         GPUImageView *g = [[GPUImageView alloc] init];
         [g setFillMode:kGPUImageFillModePreserveAspectRatioAndFill];
         g.frame = videoView.bounds;
         [videoView addSubview:g];
         
-        [self.videoCamera addTarget:self.leveBeautyFilter];
-        [self.leveBeautyFilter addTarget:g];
-//        self.videoCamera.delegate = self;
-        
-//        [self.leveBeautyFilter setFrameProcessingCompletionBlock:^(GPUImageOutput* output, CMTime time){
-//            output.
-//        }];
-        
         CGSize outputSize = {720, 1280};
-        GPUImageRawDataOutput *rawDataOutput = [[GPUImageRawDataOutput alloc] initWithImageSize:CGSizeMake(outputSize.width, outputSize.height) resultsInBGRAFormat:YES];
+        GPUImageCustomRawDataOutput *rawDataOutput = [[GPUImageCustomRawDataOutput alloc] initWithImageSize:outputSize resultsInBGRAFormat:NO];
         
-//        GPUImageRawDataOutput *rawDataOutput = [[GPUImageRawDataOutput alloc] init];
+        [self.videoCamera addTarget:self.leveBeautyFilter];
+        [self.leveBeautyFilter addTarget:self.filterOutput];
+        [self.filterOutput addTarget:g];
+        
         [self.leveBeautyFilter addTarget:rawDataOutput];
 
-        __weak GPUImageRawDataOutput *weakOutput = rawDataOutput;
-        __weak typeof(self) weakSelf = self;
+//        [self.leveBeautyFilter forceProcessingAtSize:outputSize];
+//        [rawDataOutput forceProcessingAtSize:videoView.bounds.size];
         
-        [rawDataOutput setNewFrameAvailableBlock:^{
-            __strong GPUImageRawDataOutput *strongOutput = weakOutput;
-            [strongOutput lockFramebufferForReading];
-            
-            // 这里就可以获取到添加滤镜的数据了
-            GLubyte *outputBytes = [strongOutput rawBytesForImage];
-            NSInteger bytesPerRow = [strongOutput bytesPerRowInOutput];
-            CVPixelBufferRef pixelBuffer = NULL;
-            CVPixelBufferCreateWithBytes(kCFAllocatorDefault, outputSize.width, outputSize.height, kCVPixelFormatType_32BGRA, outputBytes, bytesPerRow, nil, nil, nil, &pixelBuffer);
-            
-            // 之后可以利用VideoToolBox进行硬编码再结合rtmp协议传输视频流了
-            [weakSelf encodeWithCVPixelBufferRef:pixelBuffer];
-            
-            [strongOutput unlockFramebufferAfterReading];
-            CFRelease(pixelBuffer);
-            
+        // 输出数据
+//        __weak typeof(self) _self = self;
+//        [self.filterOutput setFrameProcessingCompletionBlock:^(GPUImageOutput *output, CMTime time) {
+//            [_self processVideo:output];
+//        }];
+
+        
+        __weak GPUImageCustomRawDataOutput *weakOutput = rawDataOutput;
+        __weak typeof(self) weakSelf = self;
+
+        [rawDataOutput setNewFrameAvailableBlockWithTime:^(CMTime frametime) {
+            __strong GPUImageCustomRawDataOutput *strongOutput = weakOutput;
+
+            [VideoGenerator sampleBufferFromRawData:strongOutput frametime:frametime block:^(CMSampleBufferRef sampleBuffer) {
+                CVPixelBufferRef aSampleBufferRef = CMSampleBufferGetImageBuffer(sampleBuffer);
+                if (!aSampleBufferRef) {
+                    return;
+                }
+                
+                __weak typeof(self) ws = self;
+                //    dispatch_async(dispatch_get_main_queue(), ^{
+                [self.delegate videoCapture:self didOutputSampleBuffer:aSampleBufferRef rotation:0  timeStamp:(int64_t)((CACurrentMediaTime()*1000))];
+                //    });
+            }];
         }];
         
         self.delegate = delegate;
+        //        self.videoCamera.delegate = self;
     }
     
     return self;
+}
+
+#pragma mark -- Custom Method
+- (void)processVideo:(GPUImageOutput *)output {
+    __weak typeof(self) _self = self;
+    @autoreleasepool {
+        GPUImageFramebuffer *imageFramebuffer = output.framebufferForOutput;
+        CVPixelBufferRef pixelBuffer = [imageFramebuffer pixelBuffer];
+        
+        if (pixelBuffer && _self.delegate && [_self.delegate respondsToSelector:@selector(videoCapture:didOutputSampleBuffer:rotation:timeStamp:)]) {
+            [_self.delegate videoCapture:_self didOutputSampleBuffer:pixelBuffer rotation:90 timeStamp:(int64_t)((CACurrentMediaTime()*1000))];
+        }
+    }
 }
 
 - (void)dealloc {
@@ -104,7 +129,7 @@
     // GUPIMAGE videoCamera
     [self.videoCamera startCameraCapture];
 
-    // origin videoCamera
+     //origin videoCamera
 //    if (!self.currentOutput) {
 //        return;
 //    }
@@ -236,12 +261,16 @@
 
 #pragma mark - Getter
 
-
 - (GPUImageStillCamera *)videoCamera {
     if (!_videoCamera) {
         _videoCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPresetHigh cameraPosition:AVCaptureDevicePositionFront];
         _videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
         _videoCamera.horizontallyMirrorFrontFacingCamera = YES;
+        
+//        _videoCamera.outputImageOrientation = _configuration.outputImageOrientation;
+//        _videoCamera.horizontallyMirrorFrontFacingCamera = NO;
+//        _videoCamera.horizontallyMirrorRearFacingCamera = NO;
+//        _videoCamera.frameRate = (int32_t)_configuration.videoFrameRate;
     }
     return _videoCamera;
 }
@@ -254,5 +283,12 @@
     return _leveBeautyFilter;
 }
 
+- (GPUImageOutput<GPUImageInput> *)filterOutput {
+    if (!_filterOutput) {
+        _filterOutput = [[LFGPUImageEmptyFilter alloc] init];
+    }
+    
+    return _filterOutput;
+}
 @end
 
